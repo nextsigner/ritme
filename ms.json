@@ -1,0 +1,11 @@
+{
+    "modulos":{
+        "m2000":{
+            "par":["DrumpPad"],
+            "s0":["intro", "https://github.com/nextsigner/unik-drumppad-mod-intro.git"],
+            "s1":["indice", "https://github.com/nextsigner/unik-drumppad-mod-index.git"],
+            "s2":["Instrumentos", "https://github.com/nextsigner/unik-drumppad-mod-001.git"]
+	}
+    },
+    "info":["Curso Interactivo creado por @nextsigner"]
+}
