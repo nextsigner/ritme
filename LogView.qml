@@ -39,7 +39,7 @@ Rectangle{
 
     FontLoader {name: "FontAwesome";source: "qrc:/fontawesome-webfont.ttf";}
     Connections {
-        target: unik;
+        target: raiz.visible?unik:undefined;
         onUkStdChanged: {
             if(!obj){
                 log((''+unik.ukStd).replace(/\n/g, '<br />'));

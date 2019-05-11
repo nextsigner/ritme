@@ -3,6 +3,7 @@ This code was created by @nextsigner
 */
 import QtQuick 2.5
 import QtQuick.Controls 2.0
+import QtQuick.Window 2.0
 import Qt.labs.settings 1.0
 import QtWebView 1.1
 import 'Silabas.js' as Sil
@@ -12,8 +13,8 @@ ApplicationWindow {
     objectName: moduleName
     visible: true
     visibility: 'FullScreen'
-    width: 720
-    height: 480
+    width: Screen.width
+    height: Screen.height
     color: app.c3
     property bool qt: false
     property string moduleName: 'ritme'
@@ -26,8 +27,6 @@ ApplicationWindow {
     property color c2: "#8DF73B"
     property color c3: "black"
     property color c4: "white"
-
-
 
     //Variables Globales
     property var keyEventObjectReceiver

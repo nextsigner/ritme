@@ -39,7 +39,7 @@ Item{
         onTriggered: {
             r.am=[]
             for(var i=0;i<fl.count;i++){
-                if(''+fl.get(i, 'fileName')!=='original_samples_v1'&&''+fl.get(i, 'fileName')!=='h'&&''+fl.get(i, 'fileName')!=='.git'&&''+fl.get(i, 'fileName')!=='samples_v2'&&''+fl.get(i, 'fileName')!=='espanish-mod-002'){
+                if(''+fl.get(i, 'fileName')!=='h'&&''+fl.get(i, 'fileName')!=='.git'&&''+fl.get(i, 'fileName')!=='sounds'){
                     r.am.push(fl.get(i, 'fileName'))
                 }
             }

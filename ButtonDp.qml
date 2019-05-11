@@ -11,10 +11,11 @@ Item {
     property color fontColor: app.c2
     property alias t: l.text
     property int numero
+    property string tipo
     MediaPlayer {
         id: mediaPlayer
         volume: appSettings.volume
-        source: 'file://'+app.qlandPath+'/original_samples_v1/'+r.text+'.wav'
+        source: 'file://'+app.qlandPath+'/sounds/'+tipo+'/'+r.text+'.wav'
     }
     Rectangle{
         id: xR1
