@@ -1,0 +1,9 @@
+[submodule "m2000/s0/ritme-intro"]
+	path = m2000/s0/ritme-intro
+	url = git@github.com:nextsigner/ritme-intro.git
+[submodule "m2000/s1/ritme-index"]
+	path = m2000/s1/ritme-index
+	url = git@github.com:nextsigner/ritme-index.git
+[submodule "m2000/s2/ritme-001"]
+	path = m2000/s2/ritme-001
+	url = git@github.com:nextsigner/ritme-001.git

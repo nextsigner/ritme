@@ -1,10 +1,9 @@
-# unik-drumppad
+# ritme
 
-Aplicaciòn para tocar instrumentos del tipo Drumppad.
+Aplicaciòn para sonidos de audio con el objetivo de crear nuevos ritmos.
 
 Para màs informaciòn
 Twitter: @nextsigner
 E-mail: nextsigner@gmail.com
 Whatsapp: +54 11 3802 4370
 
-# ritme
