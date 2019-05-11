@@ -16,7 +16,7 @@ ApplicationWindow {
     height: 480
     color: app.c3
     property bool qt: false
-    property string moduleName: 'unik-drumppad'
+    property string moduleName: 'ritme'
     property real ffs: Qt.platform.os!=='android'?0.027:0.03
     property int fs: app.width>app.height?app.width*ffs:app.height*ffs//App Font Size Value
     property int an: app.width>app.height?app.width:app.height
