@@ -12,6 +12,7 @@ Item {
     property alias t: l.text
     property int numero
     property string tipo
+    signal clicked
     MediaPlayer {
         id: mediaPlayer
         volume: appSettings.volume
@@ -88,6 +89,7 @@ Item {
             p=true
             mediaPlayer.seek(0)
             mediaPlayer.play()
+            r.clicked()
             anB1.restart()
         }
         onReleased: {
