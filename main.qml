@@ -13,8 +13,8 @@ ApplicationWindow {
     objectName: moduleName
     visible: true
     visibility: 'FullScreen'
-    width: Screen.width
-    height: Screen.height
+    width: 800
+    height: 600
     color: app.c3
     property bool qt: false
     property string moduleName: 'ritme'
@@ -318,7 +318,6 @@ ApplicationWindow {
         }
     }
     onModChanged: appSettings.umod=mod
-
 
     Component.onCompleted: {
         Sil.setDataSils()

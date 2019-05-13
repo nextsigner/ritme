@@ -67,7 +67,7 @@ Item {
         anchors.topMargin: app.fs*0.1
         anchors.right: parent.right
         anchors.rightMargin: app.fs*0.1
-        visible: Qt.platform.os!=='android'
+        visible: false//Qt.platform.os!=='android'
     }
     Text {
         id: txtNumero
