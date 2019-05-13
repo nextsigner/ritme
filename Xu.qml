@@ -23,7 +23,7 @@ Item{
             anchors.centerIn: parent
             font.pixelSize: app.fs
             color:app.c3
-            text:r.commit===''?'<b>Atenciòn!</b><br>Hay novedades en los mòdulos y secciones de este curso.<br><br>¿Desea Actualizar Qmlandia?':'<b>Atenciòn!</b><br>Hay novedades en los mòdulos y secciones de este curso.<br><br>¿Desea Actualizar Qmlandia? <br><b>Cambios:</b> '+r.commit
+            text:r.commit===''?'<b>Atenciòn!</b><br>Hay novedades en los mòdulos y secciones de este curso.<br><br>¿Desea Actualizar '+app.moduleName+'?':'<b>Atenciòn!</b><br>Hay novedades en los mòdulos y secciones de este curso.<br><br>¿Desea Actualizar '+app.moduleName+'? <br><b>Cambios:</b> '+r.commit
         }
         Row{
             anchors.right: parent.right
@@ -47,7 +47,7 @@ Item{
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        var urlGit='https://github.com/nextsigner/qmlandia.git'
+                        var urlGit='https://github.com/nextsigner/'+app.moduleName+'.git'
                         var params=urlGit
                         var m0=urlGit.split('/')
                         var s1=(''+m0[m0.length-1]).replace('.git', '')

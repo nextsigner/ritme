@@ -98,6 +98,9 @@ Item{
                 //unik.setFile('/home/nextsigner/nnn', ''+m2)
                 var m3=parseInt(m2.replace(/ /g,''))
                 txtPb.text='%'+parseInt(m3)
+                if(txtPb.text.indexOf('NaN')>=0||txtPb.text.indexOf('nan')>=0){
+                    r.visible=false
+                }
                 pb.width=pb.parent.width/100*m3
             }
         }
