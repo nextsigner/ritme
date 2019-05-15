@@ -81,7 +81,7 @@ Item {
         border.color: txt.color
         color: raiz.b
         radius: 6
-        Text {
+        UText {
             id: tip
             width: contentWidth
             height: app.fs*0.5

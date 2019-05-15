@@ -55,7 +55,7 @@ Item{
         Boton{
             w:r.botSize
             h:w
-            tp:3
+            tp:0
             d:'Indice'
             c:app.c3
             b:app.c2
@@ -76,7 +76,7 @@ Item{
         Boton{
             w:r.botSize
             h:w
-            tp:3
+            tp:0
             d:'Confugurar'
             c:app.c3
             b:app.c2
@@ -90,7 +90,7 @@ Item{
         Boton{
             w:r.botSize
             h:w
-            tp:3
+            tp:0
             d:'Ver LogView'
             c:app.c3
             b:app.c2
@@ -112,7 +112,7 @@ Item{
         Boton{
             w:r.botSize
             h:w
-            tp:3
+            tp:0
             d:'Forzar Actualizaciòn de Seccion'
             c:app.c3
             b:app.c2
@@ -144,7 +144,7 @@ Item{
        Boton{
             w:r.botSize
             h:w
-            tp:3
+            tp:0
             d:'Apagar'
             c:app.c3
             b:app.c2

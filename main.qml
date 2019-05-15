@@ -60,7 +60,7 @@ ApplicationWindow {
 
     Settings{
         id: appSettings
-        category: 'conf-'+app.moduleName
+        category: 'xconf-'+app.moduleName
         property int cantRun
         property bool fullScreen
         property real volume
@@ -80,9 +80,21 @@ ApplicationWindow {
         property int lvh
 
         property int tema
-        //onTemaChanged: setTema()
+        property string fontFamily:'nevis.ttf'
+        Component.onCompleted: {
+            console.log('FonFamily: '+fontFamily)
+        }
+        onFontFamilyChanged: {
+            setFontFamily()
+        }
     }
+    function setFontFamily(){
+        ffl.name=appSettings.fontFamily.replace('.ttf', '').replace('.otf', '')
+        ffl.source="./fonts/"+appSettings.fontFamily
+    }
+    property string fontFamily: ffl.name
     FontLoader {name: "FontAwesome";source: "qrc:/fontawesome-webfont.ttf";}
+    FontLoader{id: ffl;name: appSettings.fontFamily.replace('.ttf', '').replace('.otf', ''); source: "fonts/"+appSettings.fontFamily+""}
     Rectangle{
         id:xApp
         color: app.c3
@@ -104,7 +116,7 @@ ApplicationWindow {
             anchors.fill: parent
             color:app.c3
             visible:xEstado.text!==''
-            Text {
+            UText {
                 id: xEstado
                 text: app.moduleName
                 font.pixelSize: app.fs
@@ -149,7 +161,7 @@ ApplicationWindow {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: xT.top
         }
-        Xm{id:xM;onPressed: xBM.opacity=0.3;}
+        Xm{id:xM;onPressed: xBM.opacity=0.3;onOpacityChanged: {if(opacity===0.0){xBM.opacity=0.3}}}
         Item{
             id:xBM
             width: xM.botSize
@@ -180,9 +192,14 @@ ApplicationWindow {
                 hoverEnabled: true
                 onEntered:{
                     xBM.opacity=1.0
-                    xM.opacity=xM.opacity===0.0?1.0:0.0
+                    xM.opacity=1.0
+                    //xM.opacity=xM.opacity===0.0?1.0:0.0
                 }
-                onExited: xBM.opacity=0.3
+                onExited: {
+                    /*if(){
+                        xBM.opacity=0.3
+                    }*/
+                }
                 onClicked: {
                     xBM.opacity=1.0
                     xM.opacity=xM.opacity===0.0?1.0:0.0
@@ -239,11 +256,11 @@ ApplicationWindow {
                 Qt.quit()
             }
         }
-        Keys.onPressed: {
+        /*Keys.onPressed: {
             if(app.keyEventObjectReceiver){
                 app.keyEventObjectReceiver.event(event)
             }
-        }
+        }*/
     }
 
     Ms{id:ms}//MagicSil
@@ -401,6 +418,9 @@ ApplicationWindow {
             }else{
                 app.mod=0
                 app.s=0
+            }
+            if(appSettings.fontFamily===''){
+                appSettings.fontFamily='./fonts/Frozen Crystal 3D.ttf'
             }
         }
 

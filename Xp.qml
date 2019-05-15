@@ -39,7 +39,7 @@ Item{
         onTriggered: {
             r.am=[]
             for(var i=0;i<fl.count;i++){
-                if(''+fl.get(i, 'fileName')!=='h'&&''+fl.get(i, 'fileName')!=='.git'&&''+fl.get(i, 'fileName')!=='sounds'){
+                if(''+fl.get(i, 'fileName')!=='h'&&''+fl.get(i, 'fileName')!=='fonts'&&''+fl.get(i, 'fileName')!=='.git'&&''+fl.get(i, 'fileName')!=='sounds'){
                     r.am.push(fl.get(i, 'fileName'))
                 }
             }

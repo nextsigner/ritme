@@ -1,12 +1,12 @@
 import QtQuick 2.0
 Item {
     id: r
-    width: a.contentWidth+r.fs
-    height: r.fs*2
+    width: a.contentWidth+r.fontSize
+    height: r.fontSize*2
     clip: true
     opacity: enabled?1.0:0.5
     objectName: 'sin_nombre'
-    property int fs: app.fs
+    property int fontSize: app.fs
     property bool canceled: false
     property alias text: a.text
     property string t2
@@ -15,15 +15,15 @@ Item {
     property var objToRunQml
     property string qmlCode:''
     property int speed: 100
-    signal click
+    signal clicked
     Rectangle{
         id: xR1
         color: 'transparent'
         border.width: app.fs*0.1
         border.color: r.fontColor
         radius: app.fs*0.2
-        width: a.contentWidth+r.fs
-        height: r.fs*2
+        width: a.contentWidth+r.fontSize
+        height: r.fontSize*2
         Rectangle{
             id: b3
             opacity: b1.opacity!==0.5?1.0:0.0
@@ -79,17 +79,17 @@ Item {
             }
         }
     }
-    Text {
+    UText {
         id: a
-        font.pixelSize: r.fs
+        font.pixelSize: r.fontSize
         color: r.fontColor
         anchors.centerIn: parent
         visible: r.enabled
     }
-    Text {
+    UText {
         id: a2
         text:a.text
-        font.pixelSize: r.fs
+        font.pixelSize: r.fontSize
         color: r.backgroudColor
         x: !maBX.p?a.x:a.x+2
         y:a.y
@@ -97,10 +97,10 @@ Item {
         Behavior on x{NumberAnimation{duration:200}}
         opacity: b3.opacity
     }
-    Text {
+    UText {
         id: txtCancel
         text: '<b>?</b>'
-        font.pixelSize: r.fs*2
+        font.pixelSize: r.fontSize*2
         color: 'red'
         anchors.centerIn: parent
         visible: !r.enabled
@@ -133,7 +133,7 @@ Item {
             p=true
             b1.opacity=0.5
             if(r.qmlCode===''){
-                click()
+                r.clicked()
                 return
             }
             run.start()
@@ -145,7 +145,7 @@ Item {
         onTriggered: {
             tBxCancel.stop()
             tBxEnable.start()
-            clicked()
+            r.clicked()
             if(r.canceled){return}
             r.runQml(qmlCode)
         }
