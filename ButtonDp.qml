@@ -14,7 +14,22 @@ Item {
     property string tipo
     signal clicked
     MediaPlayer {
-        id: mediaPlayer
+        id: mp1
+        volume: appSettings.volume
+        source: 'file://'+app.qlandPath+'/sounds/'+tipo+'/'+r.text+'.wav'
+    }
+    MediaPlayer {
+        id: mp2
+        volume: appSettings.volume
+        source: 'file://'+app.qlandPath+'/sounds/'+tipo+'/'+r.text+'.wav'
+    }
+    MediaPlayer {
+        id: mp3
+        volume: appSettings.volume
+        source: 'file://'+app.qlandPath+'/sounds/'+tipo+'/'+r.text+'.wav'
+    }
+    MediaPlayer {
+        id: mp4
         volume: appSettings.volume
         source: 'file://'+app.qlandPath+'/sounds/'+tipo+'/'+r.text+'.wav'
     }
@@ -97,8 +112,22 @@ Item {
         }
     }
     function play(){
-        mediaPlayer.seek(0)
-        mediaPlayer.play()
-        anB1.restart()
+        if(mp1.playbackState!==MediaPlayer.PlayingState){
+            mp1.seek(0)
+            mp1.play()
+        }else if(mp2.playbackState!==MediaPlayer.PlayingState){
+            mp2.seek(0)
+            mp2.play()
+        }else if(mp3.playbackState!==MediaPlayer.PlayingState){
+            mp3.seek(0)
+            mp3.play()
+        }else if(mp4.playbackState!==MediaPlayer.PlayingState){
+            mp4.seek(0)
+            mp4.play()
+        }else{
+            mp1.seek(0)
+            mp1.play()
+        }
+        anB1.start()
     }
 }
